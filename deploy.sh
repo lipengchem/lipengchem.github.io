@@ -9,4 +9,4 @@ git commit -m 'deploy'
 git push -f git@github.com:lipengchem/lipengchem.github.io.git master
 
 cd ../
-rm -rf public
+rd /s /q public
