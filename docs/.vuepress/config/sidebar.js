@@ -2,7 +2,7 @@
 
 // 侧边栏
 module.exports = {
-  '/01.前端/': [
+  '/01.理论基础/': [
     {
       title: 'JavaScript',
       collapsable: false, //是否可折叠，可选的，默认true

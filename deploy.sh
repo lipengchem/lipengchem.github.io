@@ -4,7 +4,7 @@
 set -e
 
 # 构建
-npm run build
+npm run build:win
 
 # 进入构建输出目录
 cd docs/.vuepress/dist
@@ -14,10 +14,11 @@ cd docs/.vuepress/dist
 
 # 初始化一个 git 仓库并提交代码
 git init
+git checkout -b gh-pages  # 创建并切换到 gh-pages 分支
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy to gh-pages'  # 提交更改
 
 # 发布到 GitHub Pages 的 gh-pages 分支（替换你的用户名和仓库名）
-git push -f git@github.com:lipengchem/lipengchem.git master:gh-pages
+git push -f https://github.com/lipengchem/lipengchem.github.io.git gh-pages  # 强制推送到 GitHub
 
 cd -
