@@ -1,24 +1,49 @@
 #!/usr/bin/env sh
 
-# 发生错误时终止脚本
+# 一键提交源码并发布 VuePress 静态站点
 set -e
 
-# 构建
+REPO_URL="https://github.com/lipengchem/lipengchem.github.io.git"
+SOURCE_BRANCH="master"
+PAGES_BRANCH="gh-pages"
+DIST_DIR="docs/.vuepress/dist"
+COMMIT_MESSAGE="${1:-update blog}"
+
+CURRENT_BRANCH="$(git branch --show-current)"
+
+if [ "$CURRENT_BRANCH" != "$SOURCE_BRANCH" ]; then
+  echo "当前分支是 $CURRENT_BRANCH，请先切换到 $SOURCE_BRANCH 后再运行。"
+  echo "可执行：git checkout $SOURCE_BRANCH"
+  exit 1
+fi
+
+echo "==> 提交博客源码到 $SOURCE_BRANCH"
+git add -A
+
+if git diff --cached --quiet; then
+  echo "没有新的源码改动需要提交。"
+else
+  git commit -m "$COMMIT_MESSAGE"
+fi
+
+echo "==> 同步远端 $SOURCE_BRANCH"
+git pull --rebase origin "$SOURCE_BRANCH"
+
+echo "==> 推送源码到 GitHub"
+git push origin "$SOURCE_BRANCH"
+
+echo "==> 构建 VuePress 站点"
 npm run build:win
 
-# 进入构建输出目录
-cd docs/.vuepress/dist
+echo "==> 发布静态站点到 $PAGES_BRANCH"
+cd "$DIST_DIR"
 
-# 如果是自定义域名，写一个 CNAME 文件（可选）
-# echo 'www.example.com' > CNAME
-
-# 初始化一个 git 仓库并提交代码
 git init
-git checkout -b gh-pages  # 创建并切换到 gh-pages 分支
+git checkout -B "$PAGES_BRANCH"
 git add -A
-git commit -m 'deploy to gh-pages'  # 提交更改
-
-# 发布到 GitHub Pages 的 gh-pages 分支（替换你的用户名和仓库名）
-git push -f https://github.com/lipengchem/lipengchem.github.io.git gh-pages  # 强制推送到 GitHub
+git commit -m "deploy site"
+git push -f "$REPO_URL" "$PAGES_BRANCH"
 
 cd -
+
+echo "==> 完成：源码已推送到 $SOURCE_BRANCH，站点已发布到 $PAGES_BRANCH。"
