@@ -110,7 +110,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2,
     logo: '/img/logo.png',
-    repo: 'lipengchem',
+    repo: 'lipengchem/lipengchem.github.io',
     searchMaxSuggestions: 10,
     lastUpdated: '上次更新',
     docsDir: 'docs',
@@ -130,7 +130,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       createYear: 2025,
       copyrightInfo:
         'Lipeng | <a href="https://github.com/lipengchem" target="_blank">GitHub</a>' +
-        ' | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>'
+        ' | <a href="https://github.com/lipengchem/lipengchem.github.io/blob/master/LICENSE" target="_blank">MIT License</a>'
     },
     extendFrontmatter: {
       author: {
@@ -198,8 +198,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           clientID: 'Ov23li3toQAnKM2feIY0',
           clientSecret: '5c23753648c3f8fc90e0eeac3de45884409ebf1b',
           repo: 'blog-comments',
-          owner: 'lipeng',
-          admin: ['lipeng'],
+          owner: 'lipengchem',
+          admin: ['lipengchem'],
           pagerDirection: 'last',
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>',
           title: '「评论」<%- frontmatter.title %>',

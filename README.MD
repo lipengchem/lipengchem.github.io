@@ -1,19 +1,19 @@
-<p align="center"><a href="https://xugaoyi.com/" target="_blank" rel="noopener noreferrer"><img width="180" src="https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200409124835.png" alt="logo"></a></p>
+# lipeng's blog
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/vuepress-theme-vdoing"><img alt="npm" src="https://img.shields.io/npm/v/vuepress-theme-vdoing"></a>
-   <a href="https://www.npmjs.com/package/vuepress-theme-vdoing" target="_blank"><img src="https://img.shields.io/npm/dt/vuepress-theme-vdoing" alt="npm" ></a>
-  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/stargazers"><img src="https://img.shields.io/github/stars/xugaoyi/vuepress-theme-vdoing?logo=ReverbNation&logoColor=rgba(255,255,255,.6)" alt="GitHub stars"></a>
-  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/actions?query=workflow%3ACI"><img src="https://github.com/xugaoyi/vuepress-theme-vdoing/workflows/CI/badge.svg" alt="CI"></a>
-  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/actions?query=workflow%3AbaiduPush"><img src="https://github.com/xugaoyi/vuepress-theme-vdoing/workflows/baiduPush/badge.svg" alt="baiduPush"></a>
-</p>
+个人学习博客，主要记录计算化学、理论催化、第一性原理计算、分子模拟、Linux 与机器学习相关内容。
 
+- Site: https://lipengchem.github.io
+- Source: https://github.com/lipengchem/lipengchem.github.io
+- Framework: VuePress 1.x + vuepress-theme-vdoing
 
+## 本地预览
 
+```powershell
+npm.cmd run dev:win
+```
 
- 
+## 构建
 
-
-
-
-
+```powershell
+npm.cmd run build:win
+```

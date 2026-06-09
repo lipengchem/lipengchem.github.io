@@ -4,6 +4,12 @@
 set -e
 
 # 百度链接推送
-curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://xugaoyi.com&token=T5PEAzhGaPNbjQ2X"
+if [ -z "$BAIDU_PUSH_TOKEN" ]; then
+  echo "BAIDU_PUSH_TOKEN is not set, skip baidu push."
+  rm -rf urls.txt
+  exit 0
+fi
+
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://lipengchem.github.io&token=${BAIDU_PUSH_TOKEN}"
 
 rm -rf urls.txt # 删除文件
