@@ -49,7 +49,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: '计算程序',
+        text: 'DFT计算',
         link: '/application/',
         items: [
           {
@@ -59,19 +59,22 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               { text: 'VASP输入文件', link: '/application/vasp/002/' },
               { text: 'VASP输出文件', link: '/application/vasp/003/' },
               { text: '态密度', link: '/application/vasp/004/' },
+              { text: '频率计算', link: '/application/vasp/005/' },
+              { text: '自由能校正', link: '/application/vasp/006/' },
             ],
           },
           
         ],
       },
       {
-        text: '建模可视化',
-        link: '/visualization/',
+        text: '机器学习',
+        link: '/machine_learning/',
         items: [
           {
-            text: 'Materials Studio',
+            text: '机器学习理论',
             items: [
-              { text: 'Materials Studio安装', link: '/visualization/MS/001/' },
+              { text: '机器学习基础', link: '/machine_learning/001/' },
+              { text: '模型评估与优化', link: '/machine_learning/002/' },
             ],
           },
         ],
@@ -85,13 +88,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             items: [
               { text: 'Linux命令大全', link: '/more/Linux/001/' },
               { text: '编辑器的使用', link: '/more/Linux/002/' },
-            ],
-          },
-          {
-            text: '机器学习',
-            items: [
-              { text: '机器学习基础', link: '/more/machine_learning/001/' },
-              { text: '模型评估与优化', link: '/more/machine_learning/002/' },
             ],
           },
         ],
